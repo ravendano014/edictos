@@ -15,31 +15,31 @@
 <body>
 <div class="wizard-container">
     <div data-role="wizard" data-button-mode="button"
-     data-icon-help="<span>Help</span>"
-     data-icon-prev="<span>Prev</span>"
-     data-icon-next="<span>Next</span>"
-     data-icon-finish="<span>Finish</span>">
+     data-icon-help="<span>Ayuda</span>"
+     data-icon-prev="<span>Anterior</span>"
+     data-icon-next="<span>Siguiente</span>"
+     data-icon-finish="<span>Finalizar</span>">
         <section>
             <div class="page-content">
                 <div data-role="panel" data-height="600">
-                    Page 1
-                    <h4>Upload Image</h4>
+                    Paso 1 de 5
+                    <h4>Subir Solicitud de Publicación</h4>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                        Conforme a lo dispuesto en el artículo 163 del Código Procesal Penal los edictos podrán ser publicados en forma virtual en medios electrónicos, por lo que la Corte Suprema de Justicia de El Salvador dispone de este Sitio Web para la publicación electrónica de Edictos Judiciales.
                     </p>
                     
                     <div>
                         <div class="form-group">
-                            <label for="imageUpload">Select an Image:</label>
+                            <label for="imageUpload">Seleccione un archivo:</label>
                             <input type="file" id="imageUpload" data-role="file" accept="image/*">
                         </div>
                     </div>
 
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                        El documento a subir debe constituir dos elementos, la Solicitud por parte del Funcionario de la Sede Judicial y el Edicto que desea se publique en el Sitio Oficial de la Corte Suprema de Justicia por medio del Sistema de Gestión de Edictos Judiciales en su versión de publicación electrónica.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                        Al finalizar el proceso la solicitud será revisada por un abogado competente para determinar la temporalidad y la verificación del cumplimiento de no publicación de nombres de menores o cualquier otra disposición de ley que prevengan la exposición de datos que invaliden la publicación.
                     </p>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
@@ -62,8 +62,11 @@
         <section>
             <div class="page-content">
                 <div data-role="panel" data-height="600">
-                    Page 2
-                    <h4>Enter Metadata</h4>
+                    Paso 2 de 5
+                    <h4>Metadatos</h4>
+                    <p>
+                        Estos datos serán los campos por medio de los cuales el usuario podrá consultar el edicto.
+                    </p>
                     <div>
                         <div class="form-group">
                             <label for="title">Title:</label>
@@ -84,8 +87,11 @@
         <section>
             <div class="page-content">
                 <div data-role="panel" data-height="600">
-                        Page 3
+                        Paso 3 de 5
                     <h4>Texto del Edicto</h4>
+                    <p>
+                        Este es el texto que se publicará y debe ser exactamente al solicitado por el funcionario que realiza la solicitud de publicación electrónica.
+                    </p>
                     <textarea>Texto del Edicto</textarea>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.5/tinymce.min.js'></script>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
@@ -110,7 +116,7 @@
         <section>
             <div class="page-content">
                 <div data-role="panel" data-height="600">
-                    Page 4
+                    Paso 4 de 5
                     <h4>Vista Previa</h4>
                     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 
@@ -216,10 +222,10 @@
                     </script>
 
                     <div>
-                    <button id="prev">Previous</button>
-                    <button id="next">Next</button>
+                    <button id="prev">Pag. Anterior</button>
+                    <button id="next">Pag. Siguiente</button>
                     &nbsp; &nbsp;
-                    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+                    <span>Pag: <span id="page_num"></span> / <span id="page_count"></span></span>
                     </div>
 
                     <canvas id="the-canvas" width="600" height="800" style="border:1px solid #000000;"></canvas>
@@ -229,7 +235,7 @@
         <section>
             <div class="page-content">
                 <div data-role="panel" data-height="600">
-                    Page 5
+                    Paso 5 de 5
                     <h4>Emisión de Comprobante</h4>
                 </div>
             </div>
@@ -240,4 +246,5 @@
 </div>
 </body>
 </html>
+ 
  
