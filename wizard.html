@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload Wizard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metro/4.5.7/metro.css">
+    <style>
+        .wizard-container {
+            margin: auto;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="wizard-container">
+    <div data-role="wizard" data-button-mode="button"
+     data-icon-help="<span>Help</span>"
+     data-icon-prev="<span>Prev</span>"
+     data-icon-next="<span>Next</span>"
+     data-icon-finish="<span>Finish</span>">
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="600">
+                    Page 1
+                    <h4>Upload Image</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    
+                    <div>
+                        <div class="form-group">
+                            <label for="imageUpload">Select an Image:</label>
+                            <input type="file" id="imageUpload" data-role="file" accept="image/*">
+                        </div>
+                    </div>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="600">
+                    Page 2
+                    <h4>Enter Metadata</h4>
+                    <div>
+                        <div class="form-group">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" data-role="input" placeholder="Enter title...">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <input id="description" data-role="input" placeholder="Enter description...">
+                        </div>
+                        <div class="form-group">
+                            <label for="tags">Tags:</label>
+                            <input type="text" id="tags" data-role="input" placeholder="Enter tags separated by commas...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="600">
+                        Page 3
+                    <h4>Texto del Edicto</h4>
+                    <textarea>Texto del Edicto</textarea>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.5/tinymce.min.js'></script>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+                            <script id="rendered-js" >
+                    tinymce.init({
+                        selector: "textarea",
+                        plugins: "lists advlist autolink autoresize charmap code emoticons hr image insertdatetime link media paste preview searchreplace table textpattern toc visualblocks visualchars wordcount quickbars",
+                        toolbar: "code preview | undo redo | formatselect | fontselect | fontsizeselect | bold italic underline strikethrough backcolor | subscript superscript | numlist bullist | alignleft aligncenter alignright alignjustify | outdent indent | paste searchreplace | toc link image media charmap insertdatetime emoticons hr | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | removeformat",
+                        insertdatetime_element: true,
+                        media_scripts: [
+                        { filter: 'platform.twitter.com' },
+                        { filter: 's.imgur.com' },
+                        { filter: 'instagram.com' },
+                        { filter: 'https://platform.twitter.com/widgets.js' }],
+                    
+                        browser_spellcheck: true,
+                        contextmenu: false });
+                        </script>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="600">
+                    Page 4
+                    <h4>Vista Previa</h4>
+                    <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
+
+                    <script type="module">
+                    // If absolute URL from the remote server is provided, configure the CORS
+                    // header on that server.
+                    var url = '04_2024_01_25_08_25_32_719.pdf';
+
+                    // Loaded via <script> tag, create shortcut to access PDF.js exports.
+                    var { pdfjsLib } = globalThis;
+
+                    // The workerSrc property shall be specified.
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://mozilla.github.io/pdf.js/build/pdf.worker.mjs';
+
+                    var pdfDoc = null,
+                        pageNum = 1,
+                        pageRendering = false,
+                        pageNumPending = null,
+                        scale = 0.8,
+                        canvas = document.getElementById('the-canvas'),
+                        ctx = canvas.getContext('2d');
+
+                    /**
+                     * Get page info from document, resize canvas accordingly, and render page.
+                     * @param num Page number.
+                     */
+                    function renderPage(num) {
+                        pageRendering = true;
+                        // Using promise to fetch the page
+                        pdfDoc.getPage(num).then(function(page) {
+                        var viewport = page.getViewport({scale: scale});
+                        canvas.height = viewport.height;
+                        canvas.width = viewport.width;
+
+                        // Render PDF page into canvas context
+                        var renderContext = {
+                            canvasContext: ctx,
+                            viewport: viewport
+                        };
+                        var renderTask = page.render(renderContext);
+
+                        // Wait for rendering to finish
+                        renderTask.promise.then(function() {
+                            pageRendering = false;
+                            if (pageNumPending !== null) {
+                            // New page rendering is pending
+                            renderPage(pageNumPending);
+                            pageNumPending = null;
+                            }
+                        });
+                        });
+
+                        // Update page counters
+                        document.getElementById('page_num').textContent = num;
+                    }
+
+                    /**
+                     * If another page rendering in progress, waits until the rendering is
+                     * finised. Otherwise, executes rendering immediately.
+                     */
+                    function queueRenderPage(num) {
+                        if (pageRendering) {
+                        pageNumPending = num;
+                        } else {
+                        renderPage(num);
+                        }
+                    }
+
+                    /**
+                     * Displays previous page.
+                     */
+                    function onPrevPage() {
+                        if (pageNum <= 1) {
+                        return;
+                        }
+                        pageNum--;
+                        queueRenderPage(pageNum);
+                    }
+                    document.getElementById('prev').addEventListener('click', onPrevPage);
+
+                    /**
+                     * Displays next page.
+                     */
+                    function onNextPage() {
+                        if (pageNum >= pdfDoc.numPages) {
+                        return;
+                        }
+                        pageNum++;
+                        queueRenderPage(pageNum);
+                    }
+                    document.getElementById('next').addEventListener('click', onNextPage);
+
+                    /**
+                     * Asynchronously downloads PDF.
+                     */
+                    pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+                        pdfDoc = pdfDoc_;
+                        document.getElementById('page_count').textContent = pdfDoc.numPages;
+
+                        // Initial/first page rendering
+                        renderPage(pageNum);
+                    });
+                    </script>
+
+                    <div>
+                    <button id="prev">Previous</button>
+                    <button id="next">Next</button>
+                    &nbsp; &nbsp;
+                    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+                    </div>
+
+                    <canvas id="the-canvas" width="600" height="800" style="border:1px solid #000000;"></canvas>
+            </div>
+        </div>
+        </section>
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="600">
+                    Page 5
+                    <h4>Emisión de Comprobante</h4>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/metro/4.5.7/metro.min.js"></script>
+</div>
+</body>
+</html>
+ 
