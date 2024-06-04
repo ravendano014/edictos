@@ -21,7 +21,7 @@
      data-icon-finish="<span>Finalizar</span>">
         <section>
             <div class="page-content">
-                <div data-role="panel" data-height="600">
+                <div data-role="panel" data-height="550">
                     Paso 1 de 5
                     <h4>Subir Solicitud de Publicación</h4>
                     <p>
@@ -35,7 +35,19 @@
                       <p id="loaded_n_total"></p>
                     </form>
                       
-                    <script id="rendered-js" >
+                    <script>
+                    function formatBytes(bytes, decimals = 2) {
+                        if (!+bytes) return '0 Bytes'
+
+                        const k = 1024
+                        const dm = decimals < 0 ? 0 : decimals
+                        const sizes = ['Bytes', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']
+
+                        const i = Math.floor(Math.log(bytes) / Math.log(k))
+
+                        return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
+                    }
+
                     function _(el) {
                       return document.getElementById(el);
                     }
@@ -56,10 +68,10 @@
                     }
                     
                     function progressHandler(event) {
-                      _("loaded_n_total").innerHTML = "Uploaded " + event.loaded + " bytes of " + event.total;
+                      _("loaded_n_total").innerHTML = "Transfiriendo " + event.loaded + " bytes de " + formatBytes(event.total);
                       var percent = event.loaded / event.total * 100;
                       _("progressBar").value = Math.round(percent);
-                      _("status").innerHTML = Math.round(percent) + "% uploaded... please wait";
+                      _("status").innerHTML = Math.round(percent) + "% Transfiriendo... por favor espere";
                     }
                     
                     function completeHandler(event) {
@@ -84,27 +96,15 @@
                     <p>
                         Al finalizar el proceso la solicitud será revisada por un abogado competente para determinar la temporalidad y la verificación del cumplimiento de no publicación de nombres de menores o cualquier otra disposición de ley que prevengan la exposición de datos que invaliden la publicación.
                     </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ad aspernatur quas sed debitis veritatis esse inventore sapiente optio, facilis illum incidunt similique magnam impedit, veniam minus voluptate velit placeat?
-                    </p>
+
+                    <center><img src="edicto.png" alt="Edicto" height="300" width="300"></center>
+
                 </div>
             </div>
         </section>
         <section>
             <div class="page-content">
-                <div data-role="panel" data-height="600">
+                <div data-role="panel" data-height="550">
                     Paso 2 de 5
                     <h4>Metadatos</h4>
                     <p>
@@ -129,7 +129,7 @@
         </section>
         <section>
             <div class="page-content">
-                <div data-role="panel" data-height="600">
+                <div data-role="panel" data-height="550">
                         Paso 3 de 5
                     <h4>Texto del Edicto</h4>
                     <p>
@@ -146,7 +146,7 @@
                         </textarea>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.5/tinymce.min.js'></script>
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-                            <script id="rendered-js" >
+                    <script id="rendered-js" >
                     tinymce.init({
                         selector: "textarea",
                         plugins: "lists advlist autolink autoresize charmap code emoticons hr image insertdatetime link media paste preview searchreplace table textpattern toc visualblocks visualchars wordcount quickbars",
@@ -166,7 +166,7 @@
         </section>
         <section>
             <div class="page-content">
-                <div data-role="panel" data-height="600">
+                <div data-role="panel" data-height="550">
                     Paso 4 de 5
                     <h4>Vista Previa</h4>
                     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
@@ -285,7 +285,7 @@
         </section>
         <section>
             <div class="page-content">
-                <div data-role="panel" data-height="600">
+                <div data-role="panel" data-height="550">
                     Paso 5 de 5
                     <h4>Emisión de Comprobante</h4>
                 </div>
@@ -297,5 +297,8 @@
 </div>
 </body>
 </html>
+ 
+ 
+
  
  
