@@ -148,18 +148,36 @@
                     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
                     <script id="rendered-js" >
                     tinymce.init({
-                        selector: "textarea",
-                        plugins: "lists advlist autolink autoresize charmap code emoticons hr image insertdatetime link media paste preview searchreplace table textpattern toc visualblocks visualchars wordcount quickbars",
-                        toolbar: "code preview | undo redo | formatselect | fontselect | fontsizeselect | bold italic underline strikethrough backcolor | subscript superscript | numlist bullist | alignleft aligncenter alignright alignjustify | outdent indent | paste searchreplace | toc link image media charmap insertdatetime emoticons hr | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | removeformat",
-                        insertdatetime_element: true,
-                        media_scripts: [
-                        { filter: 'platform.twitter.com' },
-                        { filter: 's.imgur.com' },
-                        { filter: 'instagram.com' },
-                        { filter: 'https://platform.twitter.com/widgets.js' }],
-                    
-                        browser_spellcheck: true,
-                        contextmenu: false });
+  selector: "textarea",
+  plugins: "template lists advlist autolink autoresize charmap code emoticons hr image insertdatetime link media paste preview searchreplace table textpattern toc visualblocks visualchars wordcount quickbars",
+  toolbar: "template | code preview | undo redo | formatselect | fontselect | fontsizeselect | bold italic underline strikethrough backcolor | subscript superscript | numlist bullist | alignleft aligncenter alignright alignjustify | outdent indent | paste searchreplace | toc link image media charmap insertdatetime emoticons hr | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | removeformat",
+  menubar: false,
+
+  min_height: 380,
+  templates: [
+    {
+      title: "Replace Values template example",
+      description:
+        "This template has placeholder variables that will be replaced when this template is inserted in to TinyMCE.",
+      content:
+        "<p>Congratulations {$owner_name}!</p>" +
+        "<p>Our voting panel have agreed that {$cat_name} is definitely the {$category} cat out there.</p>" +
+        "<p>We loved seeing your photo, and will be sharing on our social media channels.</p>" +
+        "<p>Keep {$cat_name} being the {$category} cat - we know you will!</p>" +
+        '<p>Regards,<br>The 2020 Voting Panel<br><span class="created-date" style="font-size:0.7rem;">[created date]</span></p>'
+    }
+  ],
+
+  template_replace_values: {
+    owner_name: "Marty",
+    cat_name: "Toby",
+    category: "Most Handsome"
+  },
+
+  template_cdate_classes: "created-date",
+  template_cdate_format: "%A %d %B %Y"
+});
+
                         </script>
                 </div>
             </div>
@@ -298,6 +316,8 @@
 </body>
 </html>
  
+ 
+
  
 
  
