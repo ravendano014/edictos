@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos JSON</title>
+</head>
+<body>
+    <h1>Formulario de Datos JSON</h1>
+    <form id="json-form">
+        <label for="jueza_suplente">Jueza Suplente:</label>
+        <input type="text" id="jueza_suplente" name="jueza_suplente"><br><br>
+
+        <label for="acusado">Acusado:</label>
+        <input type="text" id="acusado" name="acusado"><br><br>
+
+        <label for="causa_penal">Causa Penal:</label>
+        <input type="text" id="causa_penal" name="causa_penal"><br><br>
+
+        <label for="delito">Delito:</label>
+        <input type="text" id="delito" name="delito"><br><br>
+
+        <label for="codigo_penal_articulo">Artículo del Código Penal:</label>
+        <input type="text" id="codigo_penal_articulo" name="codigo_penal_articulo"><br><br>
+
+        <label for="perjudicada">Perjudicada:</label>
+        <input type="text" id="perjudicada" name="perjudicada"><br><br>
+
+        <label for="fecha_auto">Fecha del Auto:</label>
+        <input type="text" id="fecha_auto" name="fecha_auto"><br><br>
+
+        <label for="fecha_audiencia_preliminar">Fecha de la Audiencia Preliminar:</label>
+        <input type="text" id="fecha_audiencia_preliminar" name="fecha_audiencia_preliminar"><br><br>
+
+        <label for="hora_audiencia_preliminar">Hora de la Audiencia Preliminar:</label>
+        <input type="text" id="hora_audiencia_preliminar" name="hora_audiencia_preliminar"><br><br>
+
+        <label for="juzgado_localidad">Localidad del Juzgado:</label>
+        <input type="text" id="juzgado_localidad" name="juzgado_localidad"><br><br>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    const jsonData = {
+        "jueza_suplente": "Master Juana Jeanneth Corvera de Melendez",
+        "acusado": "Adalberto Rosa Orellana",
+        "causa_penal": "23-1-2009",
+        "delito": "Violencia Intrafamiliar",
+        "codigo_penal_articulo": 200,
+        "perjudicada": "Maria Reina de los Angeles Mejia Palacios",
+        "fecha_auto": "7 de diciembre del 2023",
+        "fecha_audiencia_preliminar": "12 de marzo del 2024",
+        "hora_audiencia_preliminar": "10:00",
+        "juzgado_localidad": "Suchitoto"
+    };
+
+    // Cargar los datos en el formulario
+    document.getElementById('jueza_suplente').value = jsonData.jueza_suplente;
+    document.getElementById('acusado').value = jsonData.acusado;
+    document.getElementById('causa_penal').value = jsonData.causa_penal;
+    document.getElementById('delito').value = jsonData.delito;
+    document.getElementById('codigo_penal_articulo').value = jsonData.codigo_penal_articulo;
+    document.getElementById('perjudicada').value = jsonData.perjudicada;
+    document.getElementById('fecha_auto').value = jsonData.fecha_auto;
+    document.getElementById('fecha_audiencia_preliminar').value = jsonData.fecha_audiencia_preliminar;
+    document.getElementById('hora_audiencia_preliminar').value = jsonData.hora_audiencia_preliminar;
+    document.getElementById('juzgado_localidad').value = jsonData.juzgado_localidad;
+});
+
+    </script>
+</body>
+</html>
