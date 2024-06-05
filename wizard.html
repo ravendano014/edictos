@@ -13,8 +13,46 @@
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+            
+        const jsonData = {
+            "sede": "JUZGADO DE PRIMERA INSTANCIA DE SUCHITOTO",
+            "funcionario": "MASTER JUANA JEANNETH CORVERA DE MELENDEZ",
+            "imputado": "ADALBERTO ROSA ORELLANA",
+            "causa_penal": "23-1-2009",
+            "delito": "VIOLENCIA INTRAFAMILIAR",
+            "codigo_penal_articulo": 200,
+            "acto_judicial":"Audiencia Preliminar",
+            "en_perjuicio_de": "MARIA REINA DE LOS ANGELES MEJIA PALACIOS",
+            "fecha_acto_judicial": "DIEZ HORAS DEL DÍA DOCE DE MARZO DEL AÑO DOS MIL VEINTICUATRO",
+            "fecha_audiencia_preliminar": "12 de marzo del 2024",
+            "hora_audiencia_preliminar": "10:00",
+            "juzgado_localidad": "Suchitoto"
+        };
+
+        function loaddata(){
+            // Cargar los datos en el formulario
+
+            document.getElementById('sede').value = jsonData.sede;
+            document.getElementById('funcionario').value = jsonData.funcionario;
+            document.getElementById('imputado').value = jsonData.imputado;
+            document.getElementById('causa_penal').value = jsonData.causa_penal;
+            document.getElementById('delito').value = jsonData.delito;
+            document.getElementById('codigo_penal_articulo').value = jsonData.codigo_penal_articulo;
+            document.getElementById('acto_judicial').value = jsonData.acto_judicial;
+            document.getElementById('en_perjuicio_de').value = jsonData.en_perjuicio_de;
+            document.getElementById('fecha_acto_judicial').value = jsonData.fecha_acto_judicial;
+            document.getElementById('fecha_audiencia_preliminar').value = jsonData.fecha_audiencia_preliminar;
+            document.getElementById('hora_audiencia_preliminar').value = jsonData.hora_audiencia_preliminar;
+            document.getElementById('juzgado_localidad').value = jsonData.juzgado_localidad;
+        };
+
+
+    </script>
 </head>
 <body>
+
+
 <div class="wizard-container">
     <div data-role="wizard" data-button-mode="button"
      data-icon-help="<span>Ayuda</span>"
@@ -127,37 +165,38 @@
                 <div data-role="panel" data-height="550">
                     Paso 2 de 5
                     <h4>Metadatos</h4>
+                    <img src="OpenAI_ChatGPT_40_480x480-531689790.png" height="100" width="150" alt="ChatGPT" onclick="loaddata()">
                     <p>
                         Estos datos serán los campos por medio de los cuales el usuario podrá consultar el edicto.
                     </p>
                     <div>
                         <div class="form-group">
                             <label for="title">Sede Judicial:</label>
-                            <input type="text" id="sede" data-role="input" placeholder="Sede..." value="JUZGADO DE PRIMERA INSTANCIA DE SUCHITOTO">
+                            <input type="text" id="sede" data-role="input" placeholder="Sede..." value="">
                         </div>
                         <div class="form-group">
                             <label for="title">Funcionario:</label>
-                            <input type="text" id="juez" data-role="input" placeholder="Funcionario..." value="MASTER JUANA JEANNETH CORVERA DE MELENDEZ">
+                            <input type="text" id="funcionario" data-role="input" placeholder="Funcionario..." value="">
                         </div>
                         <div class="form-group">
                             <label for="title">Imputado(s):</label>
-                            <input type="text" id="imputado" data-role="input" placeholder="Ingrese Nombre completo..." value="ADALBERTO ROSA ORELLANA">
+                            <input type="text" id="imputado" data-role="input" placeholder="Ingrese Nombre completo..." value="">
                         </div>
                         <div class="form-group">
                             <label for="description">Delito(s):</label>
-                            <input type="text" id="delito" data-role="input" placeholder="Ingrese Delitos..." value="VIOLENCIA INTRAFAMILIAR">
+                            <input type="text" id="delito" data-role="input" placeholder="Ingrese Delitos..." value="">
                         </div>
                         <div class="form-group">
-                            <label for="description">Acto Judicial/label>
-                            <input type="text" id="acto_judicial" data-role="input" placeholder="Acto Judicial." value="Audiencia Preliminar">
+                            <label for="description">Acto Judicial</label>
+                            <input type="text" id="acto_judicial" data-role="input" placeholder="Acto Judicial." value="">
                         </div>
                         <div class="form-group">
                             <label for="description">Fecha y Hora de Acto Judicial</label>
-                            <input type="text" id="fecha_acto_judicial" data-role="input" placeholder="Fecha y Hora de Acto Judicial." value="DIEZ HORAS DEL DÍA DOCE DE MARZO DEL AÑO DOS MIL VEINTICUATRO">
+                            <input type="text" id="fecha_acto_judicial" data-role="input" placeholder="Fecha y Hora de Acto Judicial." value="">
                         </div>
                         <div class="form-group">
                             <label for="tags">En Perjuicio de:</label>
-                            <input type="text" id="En_perjuicio_de" data-role="input" placeholder="Ingrese en Perjuicio de..." value="MARIA REINA DE LOS ANGELES MEJIA PALACIOS">
+                            <input type="text" id="en_perjuicio_de" data-role="input" placeholder="Ingrese en Perjuicio de..." value="">
                         </div>
                     </div>
                 </div>
