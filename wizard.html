@@ -20,7 +20,8 @@
      data-icon-help="<span>Ayuda</span>"
      data-icon-prev="<span>Anterior</span>"
      data-icon-next="<span>Siguiente</span>"
-     data-icon-finish="<span>Finalizar</span>">
+     data-icon-finish="<span>Finalizar</span>"
+     data-on-help-click="Metro.dialog.open('#demoDialog1')">
         <section>
             <div class="page-content">
                 <div data-role="panel" data-height="550">
@@ -29,7 +30,24 @@
                     <p>
                         Conforme a lo dispuesto en el artículo 163 del Código Procesal Penal los edictos podrán ser publicados en forma virtual en medios electrónicos, por lo que la Corte Suprema de Justicia de El Salvador dispone de este Sitio Web para la publicación electrónica de Edictos Judiciales.
                     </p>
-                    
+                    <br>
+                    <div class="dialog" data-role="dialog" id="demoDialog1">
+                        <div class="dialog-title">Problemas para subir el archivo?</div>
+                        <div class="dialog-content">
+                            Puede enviarlo por email a edictos.judiciales@oj.gob.sv
+                            Necesita asistencia, favor llamar al número de teléfono: 555-55555.
+                            <br>
+                            <a href="ayuda.html">Ayuda de uso de la plataforma</a>
+                        </div>
+                        <div class="dialog-actions">
+                            <button class="button js-dialog-close">Cerrar</button>
+                            <button class="button primary js-dialog-close">Enterado</button>
+                        </div>
+                    </div>
+                    <button class="button primary"
+                        onclick="Metro.dialog.open('#demoDialog1')">Asistencia para usar la plataforma</button>
+                    <br>
+                    <hr>
                     <form id="upload_form" enctype="multipart/form-data" method="post">
                       <input type="file" name="file1" id="file1" accept="application/pdf" onchange="uploadFile()"><br>
                       <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
@@ -82,11 +100,11 @@
                     }
                     
                     function errorHandler(event) {
-                      _("status").innerHTML = "Upload Failed";
+                      _("status").innerHTML = "Error al subir archivo";
                     }
                     
                     function abortHandler(event) {
-                      _("status").innerHTML = "Upload Aborted";
+                      _("status").innerHTML = "Se interrumpió la subida del archivo";
                     }
                     
                     </script>
@@ -99,7 +117,7 @@
                         Al finalizar el proceso la solicitud será revisada por un abogado competente para determinar la temporalidad y la verificación del cumplimiento de no publicación de nombres de menores o cualquier otra disposición de ley que prevengan la exposición de datos que invaliden la publicación.
                     </p>
 
-                    <center><img src="edicto.png" alt="Edicto" height="300" width="300"></center>
+                    <center><img src="edicto.png" alt="Edicto" height="200" width="200"></center>
 
                 </div>
             </div>
