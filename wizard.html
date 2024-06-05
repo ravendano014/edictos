@@ -11,6 +11,8 @@
             padding: 5px;
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 <div class="wizard-container">
@@ -308,6 +310,32 @@
                 <div data-role="panel" data-height="550">
                     Paso 5 de 5
                     <h4>Emisión de Comprobante</h4>
+                    <input type="text" id="inputText" value="info-edicto-verificable" placeholder="Hash de seguridad">
+                    <button onclick="generateHashAndQRCode()">Generar Comprobante</button>
+                    <h2>Hash:</h2>
+                    <p id="hashOutput"></p>
+                    <h2>Código QR:</h2>
+                    <div id="qrcode"></div>
+                
+                    <script>
+                        function generateHashAndQRCode() {
+                            // Obtener el texto de entrada
+                            const text = document.getElementById('inputText').value;
+                
+                            // Generar el hash usando SHA-256
+                            const hash = CryptoJS.SHA256(text).toString(CryptoJS.enc.Hex);
+                
+                            // Mostrar el hash en el elemento correspondiente
+                            document.getElementById('hashOutput').innerText = hash;
+                
+                            // Limpiar el contenedor QR antes de generar uno nuevo
+                            document.getElementById('qrcode').innerHTML = "";
+                
+                            // Generar el código QR
+                            new QRCode(document.getElementById('qrcode'), hash);
+                        }
+                    </script>
+                <a href="edictos.html">Ver Edictos Publicados</a>
                 </div>
             </div>
         </section>
