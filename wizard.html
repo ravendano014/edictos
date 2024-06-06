@@ -159,105 +159,6 @@
             <div class="page-content">
                 <div data-role="panel" data-height="550">
                     Paso 2 de 5
-                    <h4>Metadatos</h4>
-                    <img src="OpenAI_ChatGPT_40_480x480-531689790.png" height="100" width="150" alt="ChatGPT" onclick="loaddata()">
-                    <p>
-                        Estos datos serán los campos por medio de los cuales el usuario podrá consultar el edicto.
-                    </p>
-                    <div>
-                        <div class="form-group">
-                            <label for="title">Sede Judicial:</label>
-                            <input type="text" id="sede" data-role="input" placeholder="Sede..." value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="title">Funcionario:</label>
-                            <input type="text" id="funcionario" data-role="input" placeholder="Funcionario..." value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="title">Imputado(s):</label>
-                            <input type="text" id="imputado" data-role="input" placeholder="Ingrese Nombre completo..." value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Delito(s):</label>
-                            <input type="text" id="delito" data-role="input" placeholder="Ingrese Delitos..." value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Acto Judicial</label>
-                            <input type="text" id="acto_judicial" data-role="input" placeholder="Acto Judicial." value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Fecha y Hora de Acto Judicial</label>
-                            <input type="text" id="fecha_acto_judicial" data-role="input" placeholder="Fecha y Hora de Acto Judicial." value="">
-                        </div>
-                        <div class="form-group">
-                            <label for="tags">En Perjuicio de:</label>
-                            <input type="text" id="en_perjuicio_de" data-role="input" placeholder="Ingrese en Perjuicio de..." value="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="page-content">
-                <div data-role="panel" data-height="550">
-                        Paso 3 de 5
-                    <h4>Texto del Edicto</h4>
-                    <p>
-                        Este es el texto que se publicará y debe ser exactamente al solicitado por el funcionario que realiza la solicitud de publicación electrónica.
-                    </p>
-                    <textarea>LA INFRASCRITA JUEZA SUPLENTE DEL JUZGADO DE PRIMERA INSTANCIA DE SUCHITOTO: MASTER JUANA JEANNETH CORVERA DE MELENDEZ.
-                        AL SEÑOR: ADALBERTO ROSA ORELLANA.
-                        
-                        HACE SABER: Que a folios 177, de la Causa Penal N° 23-1-2009. Instruida en su contra y procesado en este Tribunal por el delito de; VIOLENCIA INTRAFAMILIAR, previsto y sancionado en el Artículo 200 del Código Penal en prejuicio de la señora MARIA REINA DE LOS ANGELES MEJIA PALACIOS. Se encuentra el auto que en lo medular DICE:
-                        
-                        "Juzgado de Primera Instancia: Suchitoto, a las doce horas veinte minutos del día siete de diciembre del dos mil veintitrés. Advierte la suscrita jueza que habiéndose recibido los informes, del Ministerio de Hacienda, Instituto Salvadoreño del Seguro Social, Registro Nacional de las Personas Naturales y Migración y Extranjería, Dirección General de Centros Penales dándole cumplimiento a la búsqueda del Justiciable ADALBERTO ROSA ORELLANA, procesado por el delito de VIOLENCIA INTRAFAMILIAR, previsto y sancionado en el Artículo 200 del Código Penal en perjuicio de la señora MARIA REINA DE LOS ANGELES MEJIA PALACIOS, es pertinente la programación de la Audiencia Preliminar en contra del procesado supra mencionado consecuencia, señálese Audiencia Preliminar para las DIEZ HORAS DEL DÍA DOCE DE MARZO DEL AÑO DOS MIL VEINTICUATRO, previa cita de las partes. Habiéndose revisado la carpeta judicial y no habiendo encontrado registro que se haya citado notificado por medio de edictos el procesado ADALBERTO ROSA ORELLANA, no obstante haberse realizado Audiencia Preliminar en su contra y declarado rebelde por no haber comparecido a la misma según consta en Acta de Audiencia Preliminar; en consecuencia, CÍTESE Y NOTIFÍQUESE, la presente resolución por medio de EDICTO DE LEY, como asimismo fíjense en los lugares que menciona el artículo 163 del Código Procesal Penal para que se presente a este juzgado a la Audiencia Preliminar. J.J. CORVERA.////JUEZA SUPLENTE- J.J. FIGUEROA. SECRETARIA. RUBRICADAS./////////////////////////
-                        
-                        Es conforme con su original con el cual se confrontó y para que le sirva de legal notificación e intimación al incoado ausente: ADALBERTO ROSA ORELLANA, Se libra el presente edicto en el Juzgado de Primera Instancia; Suchitoto, a las ocho horas cincuenta y cinco minutos del día tres de enero del dos mil veinticuatro.
-                        </textarea>
-                    <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.5/tinymce.min.js'></script>
-                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-                    <script id="rendered-js" >
-                    tinymce.init({
-  selector: "textarea",
-  plugins: "template lists advlist autolink autoresize charmap code emoticons hr image insertdatetime link media paste preview searchreplace table textpattern toc visualblocks visualchars wordcount quickbars",
-  toolbar: "template | code preview | undo redo | formatselect | fontselect | fontsizeselect | bold italic underline strikethrough backcolor | subscript superscript | numlist bullist | alignleft aligncenter alignright alignjustify | outdent indent | paste searchreplace | toc link image media charmap insertdatetime emoticons hr | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | removeformat",
-  menubar: false,
-
-  min_height: 380,
-  templates: [
-    {
-      title: "Edicto Judicial",
-      description:
-        "Funcionario:.",
-      content:
-        "<p>El Infrascrito Juez {$funcionario} del Juzgado hace saber</p>" +
-        "<p>A: {$Imputados} que... en perjuicio de: {$En_perjuicio_de}.</p>" +
-        "<p>Detalles.</p>" +
-        "<p>Por el delito de {$Delito} para el acto judicial {$Acto}</p>" +
-        '<p>Funcionario,<br>Revisado por<br>fecha:<span class="created-date" style="font-size:0.7rem;">[created date]</span></p>'
-    }
-  ],
-
-  template_replace_values: {
-    funcionario: "MASTER JUANA JEANNETH CORVERA DE MELENDEZ",
-    Imputados: "ADALBERTO ROSA ORELLANA",
-    En_perjuicio_de: "MARIA REINA DE LOS ANGELES MEJIA PALACIOS",
-    Delito: "VIOLENCIA INTRAFAMILIAR, previsto y sancionado en el Artículo 200 del Código Penal",
-    Acto: "Audiencia Preliminar"
-  },
-
-  template_cdate_classes: "created-date",
-  template_cdate_format: "%A %d %B %Y"
-});
-
-                        </script>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="page-content">
-                <div data-role="panel" data-height="550">
-                    Paso 4 de 5
                     <h4>Vista Previa</h4>
                     <script src="https://mozilla.github.io/pdf.js/build/pdf.mjs" type="module"></script>
 
@@ -372,6 +273,105 @@
                     <canvas id="the-canvas" width="600" height="800" style="border:1px solid #000000;"></canvas>
             </div>
         </div>
+        </section>
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="550">
+                    Paso 3 de 5
+                    <h4>Metadatos</h4>
+                    <img src="OpenAI_ChatGPT_40_480x480-531689790.png" height="100" width="150" alt="ChatGPT" onclick="loaddata()">
+                    <p>
+                        Estos datos serán los campos por medio de los cuales el usuario podrá consultar el edicto.
+                    </p>
+                    <div>
+                        <div class="form-group">
+                            <label for="title">Sede Judicial:</label>
+                            <input type="text" id="sede" data-role="input" placeholder="Sede..." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Funcionario:</label>
+                            <input type="text" id="funcionario" data-role="input" placeholder="Funcionario..." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="title">Imputado(s):</label>
+                            <input type="text" id="imputado" data-role="input" placeholder="Ingrese Nombre completo..." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Delito(s):</label>
+                            <input type="text" id="delito" data-role="input" placeholder="Ingrese Delitos..." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Acto Judicial</label>
+                            <input type="text" id="acto_judicial" data-role="input" placeholder="Acto Judicial." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Fecha y Hora de Acto Judicial</label>
+                            <input type="text" id="fecha_acto_judicial" data-role="input" placeholder="Fecha y Hora de Acto Judicial." value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="tags">En Perjuicio de:</label>
+                            <input type="text" id="en_perjuicio_de" data-role="input" placeholder="Ingrese en Perjuicio de..." value="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="page-content">
+                <div data-role="panel" data-height="550">
+                        Paso 4 de 5
+                    <h4>Texto del Edicto</h4>
+                    <p>
+                        Este es el texto que se publicará y debe ser exactamente al solicitado por el funcionario que realiza la solicitud de publicación electrónica.
+                    </p>
+                    <textarea>LA INFRASCRITA JUEZA SUPLENTE DEL JUZGADO DE PRIMERA INSTANCIA DE SUCHITOTO: MASTER JUANA JEANNETH CORVERA DE MELENDEZ.
+                        AL SEÑOR: ADALBERTO ROSA ORELLANA.
+                        
+                        HACE SABER: Que a folios 177, de la Causa Penal N° 23-1-2009. Instruida en su contra y procesado en este Tribunal por el delito de; VIOLENCIA INTRAFAMILIAR, previsto y sancionado en el Artículo 200 del Código Penal en prejuicio de la señora MARIA REINA DE LOS ANGELES MEJIA PALACIOS. Se encuentra el auto que en lo medular DICE:
+                        
+                        "Juzgado de Primera Instancia: Suchitoto, a las doce horas veinte minutos del día siete de diciembre del dos mil veintitrés. Advierte la suscrita jueza que habiéndose recibido los informes, del Ministerio de Hacienda, Instituto Salvadoreño del Seguro Social, Registro Nacional de las Personas Naturales y Migración y Extranjería, Dirección General de Centros Penales dándole cumplimiento a la búsqueda del Justiciable ADALBERTO ROSA ORELLANA, procesado por el delito de VIOLENCIA INTRAFAMILIAR, previsto y sancionado en el Artículo 200 del Código Penal en perjuicio de la señora MARIA REINA DE LOS ANGELES MEJIA PALACIOS, es pertinente la programación de la Audiencia Preliminar en contra del procesado supra mencionado consecuencia, señálese Audiencia Preliminar para las DIEZ HORAS DEL DÍA DOCE DE MARZO DEL AÑO DOS MIL VEINTICUATRO, previa cita de las partes. Habiéndose revisado la carpeta judicial y no habiendo encontrado registro que se haya citado notificado por medio de edictos el procesado ADALBERTO ROSA ORELLANA, no obstante haberse realizado Audiencia Preliminar en su contra y declarado rebelde por no haber comparecido a la misma según consta en Acta de Audiencia Preliminar; en consecuencia, CÍTESE Y NOTIFÍQUESE, la presente resolución por medio de EDICTO DE LEY, como asimismo fíjense en los lugares que menciona el artículo 163 del Código Procesal Penal para que se presente a este juzgado a la Audiencia Preliminar. J.J. CORVERA.////JUEZA SUPLENTE- J.J. FIGUEROA. SECRETARIA. RUBRICADAS./////////////////////////
+                        
+                        Es conforme con su original con el cual se confrontó y para que le sirva de legal notificación e intimación al incoado ausente: ADALBERTO ROSA ORELLANA, Se libra el presente edicto en el Juzgado de Primera Instancia; Suchitoto, a las ocho horas cincuenta y cinco minutos del día tres de enero del dos mil veinticuatro.
+                        </textarea>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.5/tinymce.min.js'></script>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+                    <script id="rendered-js" >
+                    tinymce.init({
+                        selector: "textarea",
+                        plugins: "template lists advlist autolink autoresize charmap code emoticons hr image insertdatetime link media paste preview searchreplace table textpattern toc visualblocks visualchars wordcount quickbars",
+                        toolbar: "template | code preview | undo redo | formatselect | fontselect | fontsizeselect | bold italic underline strikethrough backcolor | subscript superscript | numlist bullist | alignleft aligncenter alignright alignjustify | outdent indent | paste searchreplace | toc link image media charmap insertdatetime emoticons hr | table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol | removeformat",
+                        menubar: false,
+
+                        min_height: 380,
+                        templates: [
+                            {
+                            title: "Edicto Judicial",
+                            description:
+                                "Funcionario:.",
+                            content:
+                                "<p>El Infrascrito Juez {$funcionario} del Juzgado hace saber</p>" +
+                                "<p>A: {$Imputados} que... en perjuicio de: {$En_perjuicio_de}.</p>" +
+                                "<p>Detalles.</p>" +
+                                "<p>Por el delito de {$Delito} para el acto judicial {$Acto}</p>" +
+                                '<p>Funcionario,<br>Revisado por<br>fecha:<span class="created-date" style="font-size:0.7rem;">[created date]</span></p>'
+                            }
+                        ],
+
+                        template_replace_values: {
+                            funcionario: "MASTER JUANA JEANNETH CORVERA DE MELENDEZ",
+                            Imputados: "ADALBERTO ROSA ORELLANA",
+                            En_perjuicio_de: "MARIA REINA DE LOS ANGELES MEJIA PALACIOS",
+                            Delito: "VIOLENCIA INTRAFAMILIAR, previsto y sancionado en el Artículo 200 del Código Penal",
+                            Acto: "Audiencia Preliminar"
+                        },
+
+                        template_cdate_classes: "created-date",
+                        template_cdate_format: "%A %d %B %Y"
+                        });
+
+                    </script>
+                </div>
+            </div>
         </section>
         <section>
             <div class="page-content">
