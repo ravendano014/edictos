@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edictos Judiciales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metro/4.5.7/metro.css">
+    <style>
+    body {
+  min-height: 100vh;
+  background-size: cover;
+  margin: 0;
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  display: flex;
+  flex-flow: column;
+}
+#root {
+  padding: 0;
+}
+.block-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blank-logo-image {
+  flex-shrink: 0;
+  max-width: 300px;
+  height: auto;
+}
+.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.block-title {
+  font-size: 28px;
+  font-weight: 100;
+  line-height: 1;
+  margin: 20px 0;
+}
+@media screen and (min-width: 992px) {
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .block-title {
+    margin: 48px 0;
+  }
+}
+:root {
+  --reserve-bronse-color: #6b4b19;
+  --reserve-sand-color: #efdbb2;
+  --reserve-steppe-color: rgb(226, 223, 204);
+  --reserve-olive-color: #303845;
+  --reserve-dark-color: #191919;
+  --reserve-black-color: #000000;
+  --reserve-white-color: #ffffff;
+  --reserve-light-color: #f5f5f4;
+  --reserve-light-color-accent: #e7d4ac;
+  --reserve-plus-color: #fb890e;
+  --reserve-background: var(--reserve-olive-color);
+  --reserve-background-light: var(--reserve-light-color);
+  --reserve-color: var(--reserve-white-color);
+  --reserve-color-dark: var(--reserve-black-color);
+  --reserve-color-secondary: var(--reserve-light-color);
+  --reserve-color-secondary-accent: var(--reserve-light-color-accent);
+  --reserve-logo-color-light: var(--reserve-white-color);
+  --reserve-logo-color-dark: var(--reserve-olive-color);
+  --reserve-logo-color-gold: var(--reserve-bronse-color);
+  --appbar-background: rgba(51, 47, 33, 1);
+  --appbar-item-background: rgba(51, 47, 33, 0.8);
+  --appbar-item-color: var(--reserve-light-color);
+  --appbar-item-background-hover: var(--reserve-sand-color);
+  --appbar-item-color-hover: var(--reserve-dark-color);
+  --appbar-color: var(--reserve-light-color);
+  --grid-gutter: 40px;
+}
+.row + .row {
+  margin-top: 10px;
+}
+body {
+  font-family: eUkraine Regular, sans-serif;
+}
+.bg-bronse {
+  background: var(--reserve-dark-color) !important;
+  color: var(--reserve-white-color) !important;
+}
+.bg-olive {
+  background-color: var(--reserve-olive-color) !important;
+  color: var(--reserve-white-color) !important;
+}
+.fg-olive {
+  color: var(--reserve-olive-color) !important;
+}
+.bg-dark {
+  background-color: var(--reserve-dark-color) !important;
+  color: var(--reserve-light-color) !important;
+}
+.bg-sand {
+  background-color: var(--reserve-sand-color) !important;
+  color: var(--reserve-dark-color) !important;
+}
+.bg-steppe {
+  background-color: var(--reserve-steppe-color) !important;
+  color: var(--reserve-dark-color) !important;
+}
+body {
+  background-color: var(--reserve-steppe-color);
+}
+.e-head-light {
+  font-family: eUkraine Light, sans-serif !important;
+}
+.e-head {
+  font-family: eUkraine Head Medium, sans-serif !important;
+}
+.e-accent {
+  font-family: eUkraine Medium, sans-serif !important;
+}
+.e-text {
+  font-family: eUkraine Regular, sans-serif !important;
+}
+.e-label {
+  font-family: eUkraine Light, sans-serif !important;
+}
+.e-light-text {
+  color: var(--reserve-color-secondary);
+}
+.e-light-accent {
+  color: var(--reserve-color-secondary-accent);
+}
+.text-header {
+  line-height: 1;
+  font-size: 26px;
+}
+.text-subheader {
+  font-size: 20px;
+  line-height: 1;
+}
+.text-regular {
+  font-size: 16px;
+}
+.text-logo {
+  white-space: nowrap;
+}
+.app-bar {
+  .app-bar-menu li {
+    margin-left: 10px;
+  }
+  .app-bar-menu li.active {
+    a {
+      background-color: var(--reserve-sand-color);
+      color: var(--reserve-dark-color);
+    }
+  }
+  .hamburger {
+    top: 16px;
+    span {
+      background-color: #fff !important;
+    }
+  }
+}
+.accordion {
+  .heading {
+    font-size: 24px !important;
+    background-color: transparent !important;
+    white-space: wrap !important;
+    &:hover {
+      background-color: var(--reserve-steppe-color) !important;
+    }
+    &:after {
+      top: 16px !important;
+    }
+  }
+  .content {
+    font-size: 20px !important;
+  }
+}
+.hero {
+  padding: 40px 10px;
+}
+.button.more {
+  border-radius: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    padding: 160px 80px;
+  }
+  .text-header {
+    font-size: 56px;
+  }
+  .text-subheader {
+    font-size: 28px;
+  }
+  .text-regular {
+    font-size: 20px;
+  }
+  .accordion {
+    .heading {
+      font-size: 28px !important;
+    }
+  }
+}
+footer[data-astro-cid-sz7xmlte] {
+  margin-top: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--reserve-dark-color);
+  color: var(--reserve-light-color);
+  padding: 20px 10px;
+  width: 100%;
+}
+
+    </style>
+</head>
+<body class="cloak" style="padding-top: 5px;">
+
+<nav data-role="appbar" data-expand-point="lg" class="pt-4 pb-4" style="background-color: #3C4547; color: #fff;">
+    <a href="#" class="brand no-hover">
+        <span style="width: 55px;" class="p-2 border bd-dark border-radius">
+           Logo<sup>CSJ</sup>
+        </span>
+    </a>
+
+    <ul class="app-bar-menu">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#" class="dropdown-toggle">Products</a>
+            <ul class="d-menu" data-role="dropdown">
+                <li><a href="#">Windows 10</a></li>
+                <li><a href="#">Office 365</a></li>
+                <li class="divider bg-lightGray"></li>
+                <li><a href="#">Skype</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contacts</a></li>
+    </ul>
+</nav>
+
+<main id="root">
+<div class="container-fluid"> 
+    <div class="container">
+    
+    <div class="mod-hero hero">
+        <div class="block-center d-none-md">  </div>
+        <div class="e-head-light text-center text-header mt-10">
+            <img src="LogoCSJ_Edictos.png" alt="" class="" width="150" height="100" loading="lazy" decoding="async">
+            Departamento de Edictos Judiciales</div>
+    </div>
+    </div>
+    </div>
+    <div class="container-fluid bg-light">
+        <div class="container pt-20-md pb-20-md pt-10 pb-10">
+            <h1 class="e-head text-bold text-header border-bottom bd-olive pb-4">Solicitud<sup style="color: var(--reserve-plus-color)">de</sup> Publicación:</h1>
+            <div class="e-text text-regular">
+                <ul class="mt-10 mb-10">
+                    <li>Електронний кабінет призовників, військовозобов'язаних та резервістів</li>
+                    <li>Можливість отримання інформації про статус призовника, військовозобов'язаного та резервіста</li>
+                </ul>
+                <div class="row" style="--grid-gutter: 40px">
+                    <div class="cell-md-6 border bd-olive border-radius-20 p-4">
+                        <div class="indent-letter">
+                            1 Це мобільний застосунок від Міністерства оборони України для військовозобов'язаних, у якому можна зручно та швидко оновити персональні дані без відвідування ТЦК
+                        </div>
+                    </div>
+                    <div class="cell-md-6 border bd-olive border-radius-20 p-4">
+                        <div class="indent-letter">
+                            2 Також у застосунку ви можете отримати інформацію про те, які дані щодо вас є у реєстрі військовозобов'язаних, призовників та резервістів Оберіг
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10 text-center-fs text-left-md d-none"> <button class="button large more bg-olive fg-white">Дізнатися більше</button> </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-olive fg-light">
+        <div class="container pt-20-md pb-20-md pt-10 pb-10">
+            <h1 class="e-head text-bold text-header border-bottom bd-default pb-4">Як користуватись:</h1>
+            <div class="e-text text-regular">
+                <ol class="decimal">
+                    <li>Завантажте мобільний застосунок Резерв+ з App Store або Google Play</li>
+                    <li>Відкрийте застосунок та увійдіть у свій акаунт через Bank ID</li>
+                    <li>Після входу ви зможете оновити свої дані та переглянути інформацію про свій статус</li>
+                </ol>
+                <div class="remark d-flex mt-10 border-radius-20"> <span class="mif-info mif-6x mr-4"></span>
+                    <div>
+                        Застосунок "Резерв+" сумісний з операційними системами Android версії 7 та вище та iOS 13 та вище. Попередні версії операційних систем не підтримуються.
+                    </div>
+                </div>
+                <div class="mt-10 text-center-fs text-left-md d-none-md"> <a href="#" class="button more bg-sand fg-dark">Дізнатися більше</a>
+                    <div class="ml-auto mt-4 d-flex flex-column">
+                        <a href="#" class="m-1"> <img src="" alt="" class="" style="height:42px" width="217" height="62" loading="lazy" decoding="async"> </a>
+                        <a href="#" class="m-1"> <img src="" alt="" class="" style="height:42px" width="210" height="62" loading="lazy" decoding="async"> </a>
+                    </div>
+                </div>
+                <div class="mt-10 text-center-fs text-left-md d-none-fs d-flex-md"> <a href="#" class="button large more bg-sand fg-dark">Дізнатися більше</a>
+                    <div class="ml-auto">
+                        <a href="#" class=""> <img src="" alt="" class="" width="217" height="62" loading="lazy" decoding="async"> </a>
+                        <a href="#" class="m"> <img src="" alt="" class="" width="210" height="62" loading="lazy" decoding="async"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="FAQ" class="container-fluid bg-white">
+        <div class="container pt-20-md pb-20-md pt-10 pb-10">
+            <h1 class="e-head text-bold text-header border-bottom bd-olive pb-4">Preguntas frecuentes:</h1>
+            <div class="e-text text-regular">
+                <div data-role="accordion" data-material="true" data-one-frame="false">
+                    <div class="frame">
+                        <div class="heading">Qué se necesita para solicitar la publicación de un edicto judicial? </div>
+                        <div class="content">
+                            <div class="p-2 e-text">
+                                <p>
+                                    En materia penal, deberá apegarse a lo dispuesto en el art. 163 del Código Procesal Penal.
+                                </p>
+                                <p>
+                                    Casos especiales para el art. 34 del Código Procesal de Familia.
+                                </p>
+                                <p>
+                                    Casos Espeiciales para el Diario Oficial y otras Oficinas Administrativas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</main> 
+
+<footer> 
+    Corte Suprema de Justicia de El Salvador (с) 2024 
+    <!-- Site created by Ronald Avendaño --> 
+</footer>  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/metro/4.5.7/metro.min.js"></script>
+</body>
+</html>
