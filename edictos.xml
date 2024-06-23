@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Edictos Judiciales</title>
+    <link>https://edictos.csj.gob.sv</link>
+    <description>Intranet DDTI.</description>
+    <language>es</language>
+    <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+    <lastBuildDate>Sun, 23 Jun 2024 00:00:00 GMT</lastBuildDate>
+    <generator>Custom RSS Generator</generator>
+    
+    <item>
+      <title>Edicto 3700-2024</title>
+      <link>https://edictos.csj.gob.sv/printable.php?Id=3700&amp;fecha=2024-07-01</link>
+      <description>
+        <![CDATA[
+          <b>Pub 01, 09, 17 de 07 de 2024</b><br>
+          Imputado(s): CESAR EUDES ORELLANA DIAZ<br>
+          En Perjuicio de: J.C.O.Z<br>
+          Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL<br>
+          Acto Judicial: Emplazamiento<br>
+          <b>Of. Ref. 397</b><br>
+          <a href='printable.php?Id=3700&amp;fecha=2024-07-01' target='_blank'>Comprobante Digital</a>
+        ]]>
+      </description>
+      <guid>https://edictos.csj.gob.sv/SearchData=3700-2024</guid>
+      <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+
+    <item>
+      <title>Edicto 3701-2024</title>
+      <link>https://edictos.csj.gob.sv/printable.php?Id=3701&amp;fecha=2024-07-01</link>
+      <description>
+        <![CDATA[
+          <b>Pub 01, 09, 17 de 07 de 2024</b><br>
+          Imputado(s): MARIA ISABEL MEJIA DIAZ<br>
+          En Perjuicio de: J.A.M.D.<br>
+          Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL Y NOMBRAMIENTO DE TUTOR DATIVO<br>
+          Acto Judicial: Emplazamiento<br>
+          <b>Of. Ref. 290-A-2024</b><br>
+          <a href='printable.php?Id=3701&amp;fecha=2024-07-01' target='_blank'>Comprobante Digital</a>
+        ]]>
+      </description>
+      <guid>https://edictos.csj.gob.sv/SearchData=3701-2024</guid>
+      <pubDate>Sun, 23 Jun 2024 00:00:00 GMT</pubDate>
+    </item>
+
+  </channel>
+</rss>
