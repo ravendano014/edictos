@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Speech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text to Speech Converter</h1>
+        <textarea id="text-input" placeholder="Enter text here...">
+            Edicto 3565-2024
+            Pub 21, 22, 23 de 06 de 2024
+
+            EL INFRASCRITO JUEZ DEL TRIBUNAL PRIMERO CONTRA EL CRIMEN ORGANIZADO (JUEZ 1) DE LA CIUDAD Y DEPARTAMENTO DE SAN MIGUEL, HACE SABER: Alos sefiores: 1. OMAR DE JESUS LOPEZ MARQUEZ ALIAS CHUNGO de veintitrés afios de edad, de estado civil soltero, de profesion u oficio sin oficio, es de piel de color moreno, pelo de color negro, ojos de color cafés, de complexion delgado; de un metro con sesenta centimetros de alto; Nacido el dia treinta y uno del Mes de Mayo del afio mil novecientos noventa y cinco en la ciudad de Ozatlan del Departamento de Usulutén; siendo hijo de Noé de Jestis Lépez Mendoza y Flor Marina Mérquez; Residente en Canton Las Trancas del Municipio de Ozatlan del Departamento de Usulutan; aquien se le atribuye el delito de ORGANIZACIONES TERRORISTAS, en periuicio de La Seguridad del Pais y La Paz Publica. 2. JORGE ALBERTO CASTILLO RIVERA, ALIAS “EL CHORRO FINO Usulutén; a quien se le atribuye el delito de PRIVACION DE LIBERTAD; previsto y Sancionadoen ~ - el articulo ciento cuarenta y ocho del cadigo penal, en perjuicio de, personas que gozan de régimen de proteccion bajo la clave “Cornelio y Cornelio A quienes todos se les atribuye el delito de ORGANIZACIONES TERRORISTAS previsto y sancionado en el Art. 13 LECAT, en perjuicio de la Seguridad del Pais y La Paz Publica Que el sefior Juez, Licenciado FRANCISCO ANTONIO PRUDENCIO GARCIA, mediante Auto emitido en este Juzgado, a las once horas del dia diez de los corrientes, en el Proceso Penal numero 27-02-19-4 (5), quien ha sefialado citar a los anteriores imputados REBELDES a las NUEVE HORAS CON TREINTA MINUTOS DEL DIA TREINTA DE JULIO DEL PRESENTE ANO, en las instalaciones de este Tribunal; para la realizacion de la Celebracion de AUDIENCIA PRELIMINAR Se expide la presente en el Tribunal Primero Contra el Crimen Organizado (J-1), de fa ciudad de San Miguel, a los diez dias del mes de junio de dos mil veinticuatro. FaAss R SO PA Y LIC. FRANCISCO ANTONIO PRUDENCIO GARCIA
+
+            Imputado(s): OMAR DE JESUS LOPEZ MARQUEZ Y OTROS
+
+            En Perjuicio de: LA SEGURIDAD DEL PAIS Y OTROS
+
+            Delito(s): ORGANIZACIONES TERRORISTAS Y OTROS
+
+            Acto Judicial: Audiencia Preliminar
+
+            Of. Ref. 1255
+        </textarea>
+        <button id="speak-btn">Speak</button>
+    </div>
+    <script>
+        document.getElementById('speak-btn').addEventListener('click', function() {
+            let text = document.getElementById('text-input').value;
+            let speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        });
+    </script>
+</body>
+</html>
