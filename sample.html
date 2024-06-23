@@ -169,11 +169,31 @@ h3 {
 
     <p>Conforme a lo dispuesto en el artículo 163 del Código Procesal Penal los edictos podrán ser publicados en forma virtual en medios electrónicos, por lo que la Corte Suprema de Justicia de El Salvador dispone de este Sitio Web para la publicación electrónica de Edictos Judiciales.</p>
 
-<p><h3>Edicto 3700-2024</h3></p>
-<button onclick="speakText('Edicto 3700-2024, Pub 01, 09, 17 de 07 de 2024. Imputado(s): CESAR EUDES ORELLANA DIAZ. En Perjuicio de: J.C.O.Z. Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL. Acto Judicial: Emplazamiento. Of. Ref. 397')">Escuchar</button>
-<p><b>Pub 01, 09, 17 de 07 de 2024</b></p><p></p><p>Imputado(s): CESAR EUDES ORELLANA DIAZ</p><p>En Perjuicio de: J.C.O.Z</p><p>Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL</p><p>Acto Judicial: Emplazamiento</p><p><b>Of. Ref. 397</b></p><br><p><a href='printable.php?Id=3700&fecha=2024-07-01' target='_blank'>Comprobante Digital</a></p><hr><p><h3>Edicto 3701-2024</h3></p>
-<button onclick="speakText('Edicto 3701-2024, Pub 01, 09, 17 de 07 de 2024. Imputado(s): MARIA ISABEL MEJIA DIAZ. En Perjuicio de: J.A.M.D. Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL Y NOMBRAMIENTO DE TUTOR DATIVO. Acto Judicial: Emplazamiento. Of. Ref. 290-A-2024')">Escuchar</button>
-<p><b>Pub 01, 09, 17 de 07 de 2024</b></p><p></p><p>Imputado(s): MARIA ISABEL MEJIA DIAZ</p><p>En Perjuicio de: J.A.M.D.</p><p>Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL Y NOMBRAMIENTO DE TUTOR DATIVO</p><p>Acto Judicial: Emplazamiento</p><p><b>Of. Ref. 290-A-2024</b></p><br><p><a href='printable.php?Id=3701&fecha=2024-07-01' target='_blank'>Comprobante Digital</a></p><hr><hr>
+<article id="edict-3700-2024">
+  <h3>Edicto 3700-2024</h3>
+  <button onclick="speakText('edict-3700-2024')">Escuchar</button>
+  <p><b>Pub 01, 09, 17 de 07 de 2024</b></p>
+  <p>Imputado(s): CESAR EUDES ORELLANA DIAZ</p>
+  <p>En Perjuicio de: J.C.O.Z</p>
+  <p>Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL</p>
+  <p>Acto Judicial: Emplazamiento</p>
+  <p><b>Of. Ref. 397</b></p>
+  <p><a href='printable.php?Id=3700&fecha=2024-07-01' target='_blank'>Comprobante Digital</a></p>
+</article>
+<hr>
+<article id="edict-3701-2024">
+  <h3>Edicto 3701-2024</h3>
+  <button onclick="speakText('edict-3701-2024')">Escuchar</button>
+  <p><b>Pub 01, 09, 17 de 07 de 2024</b></p>
+  <p>Imputado(s): MARIA ISABEL MEJIA DIAZ</p>
+  <p>En Perjuicio de: J.A.M.D.</p>
+  <p>Delito(s): PERDIDA DE LA AUTORIDAD PARENTAL Y NOMBRAMIENTO DE TUTOR DATIVO</p>
+  <p>Acto Judicial: Emplazamiento</p>
+  <p><b>Of. Ref. 290-A-2024</b></p>
+  <p><a href='printable.php?Id=3701&fecha=2024-07-01' target='_blank'>Comprobante Digital</a></p>
+</article>
+<hr>
+
     <p align="Justified">
     <b>¿Qué son los Edictos Judiciales?</b>
 <br>
@@ -205,9 +225,9 @@ Los edictos judiciales son esenciales para el funcionamiento de la justicia. Per
 
 </article>
 <script type="text/javascript">
-  function speakText(text) {
+  function speakText(id) {
     var speech = new SpeechSynthesisUtterance();
-    speech.text = text;
+    speech.text = document.getElementById(id).innerText;
     speech.lang = 'es-ES';
     window.speechSynthesis.speak(speech);
   }
