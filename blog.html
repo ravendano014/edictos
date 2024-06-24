@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Edictos Judiciales</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header input {
+            padding: 5px;
+            font-size: 16px;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        header button {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            padding-top: 60px;
+        }
+
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-left: 1px solid #ddd;
+            overflow-y: auto;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            right: 0;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .sidebar li {
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        main {
+            padding: 20px;
+            flex-grow: 1;
+            margin-right: 220px; /* Añadir espacio para la barra lateral */
+        }
+
+        .edict {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .edict h2 {
+            margin: 0 0 10px;
+        }
+
+        .edict p {
+            margin: 5px 0;
+        }
+
+        .edict .date {
+            font-size: 14px;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: relative;
+                top: 0;
+                right: 0;
+                border-left: none;
+                border-top: 1px solid #ddd;
+                margin-top: 20px;
+            }
+
+            main {
+                margin-right: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header input {
+                margin-right: 0;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            header button {
+                width: 100%;
+            }
+
+            .sidebar {
+                padding: 10px;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            .edict {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edictos Judiciales</h1>
+        <input type="text" id="searchInput" placeholder="Buscar por título...">
+        <button onclick="sortEdicts()">Ordenar por Fecha</button>
+    </header>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="container">
+        <main id="edictContainer">
+            <!-- Los edictos se cargarán aquí dinámicamente -->
+        </main>
+        <aside class="sidebar">
+            <p>&nbsp;</p>
+            <h3>Agrupación por Fechas</h3>
+            <ul id="dateGroups">
+                <!-- Los grupos de fechas se cargarán aquí dinámicamente -->
+            </ul>
+        </aside>
+    </div>
+    <script>
+        const edicts = [];
+        for (let i = 1; i <= 100; i++) {
+            const date = new Date();
+            date.setDate(date.getDate() - i);
+            edicts.push({
+                title: `Edicto ${i}`,
+                content: `Contenido del edicto ${i}`,
+                date: date.toISOString().split('T')[0]
+            });
+        }
+
+        function groupEdictsByDate(edicts) {
+            const groups = {};
+            edicts.forEach(edict => {
+                const date = new Date(edict.date);
+                const year = date.getFullYear();
+                const month = date.toLocaleString('default', { month: 'long' });
+                if (!groups[year]) {
+                    groups[year] = {};
+                }
+                if (!groups[year][month]) {
+                    groups[year][month] = [];
+                }
+                groups[year][month].push(edict);
+            });
+            return groups;
+        }
+
+        function displayDateGroups(groups) {
+            const dateGroupsContainer = document.getElementById('dateGroups');
+            dateGroupsContainer.innerHTML = '';
+            for (const year in groups) {
+                const yearItem = document.createElement('li');
+                yearItem.textContent = year;
+                const monthList = document.createElement('ul');
+                for (const month in groups[year]) {
+                    const monthItem = document.createElement('li');
+                    monthItem.textContent = month;
+                    monthItem.onclick = () => displayEdicts(groups[year][month]);
+                    monthList.appendChild(monthItem);
+                }
+                yearItem.appendChild(monthList);
+                dateGroupsContainer.appendChild(yearItem);
+            }
+        }
+
+        function displayEdicts(edictsToDisplay) {
+            const container = document.getElementById('edictContainer');
+            container.innerHTML = '';
+            edictsToDisplay.forEach(edict => {
+                const edictElement = document.createElement('div');
+                edictElement.classList.add('edict');
+                edictElement.innerHTML = `
+                    <h2>${edict.title}</h2>
+                    <p>${edict.content}</p>
+                    <p class="date">${new Date(edict.date).toLocaleDateString()}</p>
+                `;
+                container.appendChild(edictElement);
+            });
+        }
+
+        function sortEdicts() {
+            const sortedEdicts = edicts.slice().sort((a, b) => new Date(b.date) - new Date(a.date));
+            displayEdicts(sortedEdicts);
+        }
+
+        function searchEdicts() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const filteredEdicts = edicts.filter(edict => edict.title.toLowerCase().includes(searchInput));
+            displayEdicts(filteredEdicts);
+        }
+
+        document.getElementById('searchInput').addEventListener('input', searchEdicts);
+
+        window.onload = () => {
+            const groupedEdicts = groupEdictsByDate(edicts);
+            displayDateGroups(groupedEdicts);
+            displayEdicts(edicts);
+        };
+    </script>
+</body>
+</html>
