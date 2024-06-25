@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar IP del Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #ip-address {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tu Dirección IP</h1>
+        <div id="ip-address">Cargando...</div>
+    </div>
+
+    <script>
+        // URL del servicio ipify
+        const ipifyUrl = 'https://api.ipify.org?format=json';
+
+        // Función para obtener la IP
+        async function getIPAddress() {
+            try {
+                const response = await fetch(ipifyUrl);
+                const data = await response.json();
+                document.getElementById('ip-address').textContent = `Tu IP es: ${data.ip}`;
+                // Registrar la IP (aquí podrías enviar la IP a un servidor para almacenarla)
+                console.log(`IP registrada: ${data.ip}`);
+            } catch (error) {
+                console.error('Error al obtener la IP:', error);
+                document.getElementById('ip-address').textContent = 'Error al obtener la IP';
+            }
+        }
+
+        // Llamar a la función para obtener la IP al cargar la página
+        window.onload = getIPAddress;
+    </script>
+</body>
+</html>
