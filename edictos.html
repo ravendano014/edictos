@@ -134,6 +134,34 @@ h3 {
     <script language="javascript">
       function ts(e,t){if(document.getElementById){var a,r,n,s=document,d=null,m=startSz;for((m+=t)<0&&(m=0),m>6&&(m=6),startSz=m,(d=s.getElementById(e))||(d=s.getElementsByTagName(e)[0]),d.style.fontSize=szs[m],a=0;a<tgs.length;a++)for(n=d.getElementsByTagName(tgs[a]),r=0;r<n.length;r++)n[r].style.fontSize=szs[m]}}var tgs=new Array("div","p","li","td","tr","table"),szs=new Array("xx-small","x-small","small","medium","large","x-large","xx-large"),startSz=3;
     </script>        
+        <script type="text/javascript" src="js/intro.min.js"></script>
+<link rel='stylesheet' href='css/introjs.min.css'>
+<script id="rendered-js" >
+function startIntro(){
+introJs().setOptions({
+  steps: [
+    { intro: "Tutorial de uso de Consulta de Publicación Electrónica/Digital de Edictos Judiciales, bienvenid@ a este tutotial de uso" },
+    { element: document.querySelector('#Aminus'),
+    intro: "Haz click en A- para reducir el tamaño del texto, esto puede ser útil para mostrar más contenido en pantalla." },
+    { element: document.querySelector('#Aplus'),
+    intro: "Haz click en A+ para aumentar el tamaño, esta opción ayuda a leer mejor ampliando el tamaño de la letra." },
+    { element: document.querySelector('#Help'),
+    intro: "Haz click en Manual de Ayuda para ampliar cualquier detalle de la búsqueda de información y sus resultados" },
+    { element: document.querySelector('#SearchData'),
+    intro: "Acá puedes escribir el nombre completo o parte del nombre del imputado, en perjuicio de, el delito y otas formas de ubicar a alguien como su dui, etc." },
+    { element: document.querySelector('#SearchDataButton'),
+    intro: "Una vez hayas escrito el dato a buscar haz click en consultar para mostrar el resultado de tu búsqueda, si quieres ver todos los disponibles haz click en consultar con la casilla de búsqueda vacía." },
+    { element: document.querySelector('#voiceBtn'),
+    intro: "Al presionarlo deberás permitir el acceso del micrófono en tu dispositivo al menos la primera vez, esto se configura justo en la barra de direcciones antes de: https://edictos.csj.gob.sv" },
+    { element: document.querySelector('#SearchDate'),
+    intro: "Puedes consultar resultados basados en la fecha de publicación de los edictos, generalmente son tres diferentes fechas." },
+    { element: document.querySelector('#SearchDateButton'),
+    intro: "Al presionar este botón estás haciendonós saber que tu búsqueda es por medio de la fecha elegida previamente en la casilla de fecha." },
+    { element: document.querySelector('#none'),
+    intro: 'El aplicativo Consulta Electrónica de Edictos Judiciales es una colaboración de varias dependencias de la Corte Suprema de Justicia, vamos a continuar innovando para mejorar el servicio a nuestros usuarios internos y externos, Comienza a explorar más!' },
+] }).start();
+}
+</script>     
     </head>
 <body>
 <article>
